@@ -1,0 +1,22 @@
+﻿@model Data.Models.User
+@{
+    ViewData["Title"] = "UserAdd";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>UserAdd</h1>
+<br />
+@using (Html.BeginForm("UserAdd","User", FormMethod.Post))
+{
+    @Html.Label("User Name")
+    @Html.TextBoxFor(x => x.UserName, new { @class = "form-control" })
+    <br />
+    @Html.Label("Password")
+    @Html.TextBoxFor(x => x.Password, new { @class = "form-control" })
+    <br />
+  
+   
+    <button class="btn btn-primary">Save</button>
+}
+
+

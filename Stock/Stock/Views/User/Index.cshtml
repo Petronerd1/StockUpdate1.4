@@ -1,0 +1,48 @@
+﻿@model List<Data.Models.User>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+}
+
+@using (Html.BeginForm())
+{
+    <p>
+        User Name @Html.TextBox("s")
+        <input type="submit" value="Find" />
+    </p>
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <table class="table table-bordered">
+        <tr>
+            <th>User Name</th>
+            <th>Password</th>
+
+
+        </tr>
+        @foreach (var x in Model)
+        {
+            <tr>
+                <td>@x.UserName</td>
+                <td>@x.Password</td>
+                <td><a href="/User/UserDelete/@x.UserId " class="btn btn-danger">Delete</a></td>
+                <td><a href="/User/UserGet/@x.UserId" class="btn btn-success">Update</a></td>
+
+            </tr>
+
+        }
+
+    </table>
+    <a href="/User/UserAdd/" class="btn btn-primary">New User</a>
+</body>
+</html>

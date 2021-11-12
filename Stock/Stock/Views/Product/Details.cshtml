@@ -1,0 +1,46 @@
+﻿@model List<Data.Models.Product>
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+
+    <table class="table table-bordered">
+      <tr>
+          Details
+      </tr>
+        @foreach (var x in Model)
+        {
+            <tr>
+                <td>@x.Details</td>
+               
+            </tr>
+
+        }
+
+    </table>
+
+
+    <div class="total-content">
+        <div class="list_of_members">
+            <div class="sales" style="background-color:lemonchiffon">
+                <div class="icon-text">
+                    <h3>Total Stock: @ViewBag.T2</h3>
+
+                </div>
+            </div>
+        </div>
+        <div class="clearfix"></div>
+        </div>
+    </body>
+        </html>
+

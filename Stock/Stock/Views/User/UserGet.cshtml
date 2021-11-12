@@ -1,0 +1,24 @@
+﻿@model Data.Models.User
+@{
+    ViewData["Title"] = "UserGet";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>User Update</h1>
+<br />
+
+@using (Html.BeginForm("UserUpdate","User", FormMethod.Post))
+{
+    @Html.LabelFor(x => x.UserId)
+    @Html.TextBoxFor(x => x.UserId, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.UserName)
+    @Html.TextBoxFor(x => x.UserName, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.Password)
+    @Html.TextBoxFor(x => x.Password, new { @class = "form-control" })
+    <br />
+   
+    <button class="btn btn-light">Update</button>
+}
+
